@@ -1734,6 +1734,10 @@ PrefabInstance:
       propertyPath: pointsToMoveTo.Array.data[2]
       value: 
       objectReference: {fileID: 108810308}
+    - target: {fileID: 5935035621223122989, guid: 6f593468b13433544a4e8ccbc765bce4, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 5969001186915585991, guid: 6f593468b13433544a4e8ccbc765bce4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1797,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6805282195774189453, guid: 76dd95b26932d9a4fb5688835140d3f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.63
+      value: 10.43
       objectReference: {fileID: 0}
     - target: {fileID: 6805282195774189453, guid: 76dd95b26932d9a4fb5688835140d3f8, type: 3}
       propertyPath: m_LocalPosition.y
