@@ -14,8 +14,10 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         // Spawn numberOfObjectsToSpawn objects at random positions (1)
-
+        for (int i = 0; i < numberOfObjectsToSpawn; i++)
+        {
+            Vector3 randomPosition = new Vector3(Random.Range(-10, 10), Random.Range(0, 10), Random.Range(0, 20));
+            Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
+        }
     }
-
-
 }
