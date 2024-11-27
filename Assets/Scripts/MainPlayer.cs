@@ -10,7 +10,6 @@ public class MainPlayer : MonoBehaviour
     [Header("Player Movement")]
     [SerializeField] private List<Transform> pointsToMoveTo; // In this case we will set 3 points to move to in order in the inspector, directly as transforms that can be freely moved and directly visualised. (2)
                                                              // Alternativly we can change to private List<float> pointsToMoveTo to input points manually in the inspector if preferred by designers.
-
     [SerializeField] private float speed = 5.0f; // (2)
 
     private int currentPointIndex = 0;
@@ -34,7 +33,6 @@ public class MainPlayer : MonoBehaviour
     {
         if (gameOverEvent == null)
             gameOverEvent = new UnityEvent();
-
         gameOverEvent.AddListener(GameOverHandle);
     }
 
@@ -83,10 +81,5 @@ public class MainPlayer : MonoBehaviour
         {
             gameOverEvent.Invoke();
         }
-    }
-
-    private void OnDestroy()
-    {
-        // Call the restart or end game event (end screen / option to restart)
     }
 }
