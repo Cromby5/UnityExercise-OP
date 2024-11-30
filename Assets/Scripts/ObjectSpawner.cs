@@ -13,18 +13,26 @@ public class ObjectSpawner : MonoBehaviour
 
     void Start()
     {
-        Bounds bounds = spawnerBounds.bounds;
+       SpawnAll();
+    }
+    private void SpawnAll()
+    {
+        Bounds bounds = spawnerBounds.bounds; // Found under the Floor/SpawnerBounds object in the scene. This is a box collider that will be used to spawn objects within its bounds
 
         for (int i = 0; i < numberOfObjectsToSpawn; i++)
         {
             Vector3 randomPosition = new Vector3(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y), Random.Range(bounds.min.z, bounds.max.z));
-            Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
+            Instantiate(objectToSpawn, randomPosition, Quaternion.identity, spawnerBounds.transform);
         }
-        // Spawn numberOfObjectsToSpawn objects at random positions (1)
-        //for (int i = 0; i < numberOfObjectsToSpawn; i++)
-        //{
-        //    Vector3 randomPosition = new Vector3(Random.Range(-10, 10), Random.Range(0, 10), Random.Range(0, 20));
-        //    Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
-        //}
+    }
+
+    public void Reset()
+    {
+        // Remove all objects spawned by this spawner (1)
+        foreach (Transform child in spawnerBounds.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        SpawnAll();
     }
 }
