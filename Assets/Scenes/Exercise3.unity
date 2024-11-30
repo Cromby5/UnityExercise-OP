@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 61516934}
   m_Layer: 0
-  m_Name: ---------------- UI ----------------
+  m_Name: ---------------- UI -----------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345538630}
   m_Layer: 0
-  m_Name: ------------ Managers ------------
+  m_Name: ------------ Managers -------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368735304}
   m_Layer: 0
-  m_Name: ------------- Testing -------------
+  m_Name: ------------- Testing ---------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,6 +1400,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8814934321958373016, guid: 59a25efed027645428d5a6df3229ebdd, type: 3}
   m_PrefabInstance: {fileID: 901104349}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038683913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038683914}
+  m_Layer: 0
+  m_Name: ------------ Camera / Lights --------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038683914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038683913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5426493, y: 4.625736, z: -7.04333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1069610590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550626773}
   m_Layer: 0
-  m_Name: ----------- Environment -----------
+  m_Name: ----------- Environment ------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3253,6 +3284,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1038683914}
   - {fileID: 1520743462}
   - {fileID: 277978142}
   - {fileID: 345538630}
