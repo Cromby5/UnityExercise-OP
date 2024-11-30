@@ -14,4 +14,4 @@ The unity project allows you to test your luck by watching if your player can ma
 
 There is no player input, it is all based on luck if you can make it to the end of the course, however you can go around the problem by disabling collisions within the inspector should you choose.
 
-The path can be altered through the editor by utilizing the LevelManager, here you can set a list of points for the player to go between in order, You can also change the amount of asteroids each run, and importantly where they might appear as they are confined to spawn randomly within the spawnerbounds.
+The path can be altered through the editor by utilizing the LevelManager, here you can set a list of points for the player to go between in order, You can also change the amount of asteroids each run, and importantly where they might appear as they are confined to spawn randomly within the spawner bounds.
