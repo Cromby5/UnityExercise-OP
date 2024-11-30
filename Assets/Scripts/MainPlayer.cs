@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class MainPlayer : MonoBehaviour
 {
@@ -32,13 +30,6 @@ public class MainPlayer : MonoBehaviour
 
     bool isGameOver = false;
     bool isGameWon = false;
-    public UnityEvent gameOverEvent; // may be a bit much for this example, but is useful for other objects / scripts to listen for.
-
-    [Header("UI")] // Normally I would use a manager to handle these elements to allow expansion, however I want to keep this simple and self contained 
-    [SerializeField] private TextMeshProUGUI attemptsText; 
-    [SerializeField] private TextMeshProUGUI winsText;
-    private int attempts = 0;
-    private int wins = 0;
 
     [Header("TEST Functions")]
     [SerializeField] private bool hasCollision = false;
@@ -50,10 +41,8 @@ public class MainPlayer : MonoBehaviour
 
     private void Start()
     {
-        gameOverEvent ??= new UnityEvent();
-        gameOverEvent.AddListener(GameOverHandle);
-        attempts++;
-        attemptsText.text = "" + attempts;
+        LevelManager.instance.gameOverEvent.AddListener(GameOverHandle);
+        LevelManager.instance.resetEvent.AddListener(Reset);
     }
 
     private void Update()
@@ -75,8 +64,9 @@ public class MainPlayer : MonoBehaviour
         else 
         {
             isGameWon = true; // changes the sound and particle effect to a win effect.
+            LevelManager.instance.winEvent.Invoke();
             Debug.Log("You Win");
-            gameOverEvent.Invoke();
+            LevelManager.instance.gameOverEvent.Invoke();
         }
     }
     private void GameOverHandle()
@@ -87,8 +77,6 @@ public class MainPlayer : MonoBehaviour
         {
             audioSource.PlayOneShot(winSound);
             winParticle.Play();
-            wins++;
-            winsText.text = "" + wins;
         }
         else
         {
@@ -107,7 +95,7 @@ public class MainPlayer : MonoBehaviour
         // If the object collides with an asteroid, destroy the object (4)
         if (collision.gameObject.CompareTag("Asteroid"))
         {
-            gameOverEvent.Invoke();
+            LevelManager.instance.gameOverEvent.Invoke();
         }
     }
 
@@ -116,10 +104,8 @@ public class MainPlayer : MonoBehaviour
         pointsToMoveTo = points;
     }
 
-    public void Reset() // Testing purposes, to reset the player object quickly. better than restarting / building the game each time (slow process). 
+    private void Reset() // Testing purposes, to reset the player object quickly. better than restarting / building the game each time (slow process). 
     {
-        attempts++;
-        attemptsText.text = "" + attempts;
         currentPointIndex = 0;
         audioSource.Stop();
 

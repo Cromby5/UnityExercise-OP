@@ -299,17 +299,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &225702895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2256796979918971988, guid: 6f593468b13433544a4e8ccbc765bce4, type: 3}
-  m_PrefabInstance: {fileID: 2927832295184356981}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f931bf3a11c11014c895e62a18f0bbaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &259102299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2167,29 @@ MonoBehaviour:
   - {fileID: 901104350}
   - {fileID: 108810308}
   playerStart: {fileID: 1510426953}
+  gameOverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1910796786}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  winEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  attemptsText: {fileID: 671425732}
+  winsText: {fileID: 1746613683}
 --- !u!1 &1746613681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,18 +2653,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1707909545}
         m_TargetAssemblyTypeName: ObjectSpawner, Assembly-CSharp
-        m_MethodName: Reset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 225702895}
-        m_TargetAssemblyTypeName: MainPlayer, Assembly-CSharp
         m_MethodName: Reset
         m_Mode: 1
         m_Arguments:

@@ -28,6 +28,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public void Reset()
     {
+        LevelManager.instance.resetEvent.Invoke();
         // Remove all objects spawned by this spawner (1)
         foreach (Transform child in spawnerBounds.transform)
         {
